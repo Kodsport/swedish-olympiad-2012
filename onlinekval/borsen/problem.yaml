@@ -1,0 +1,7 @@
+type: scoring
+source: Programmeringsolympiadens onlinekval 2012
+license: cc by-sa
+rights_owner: Programmeringsolympiaden
+validator_flags: float_tolerance 1e-5
+grading: 
+  show_test_data_groups: true
