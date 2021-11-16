@@ -23,12 +23,21 @@ tc 2
 tc 4
 tc_manual g1
 tc_manual g2
+tc_manual ../manual/special1.in
+tc_manual ../manual/special2.in
+tc_manual ../manual/special3.in
 tc rnd-small-1 gen_random maxw=10 maxbsum=25
 tc rnd-small-2 gen_random maxw=10 maxbsum=25
 tc rnd-small-3 gen_random maxw=10 maxbsum=25
 tc rnd-small-4 gen_random maxw=10 maxbsum=25
 tc rnd-small-5 gen_random maxw=10 maxbsum=25
 tc rnd-small-6 gen_random maxw=10 maxbsum=25
+tc rnd-small-7 gen_random maxw=8 maxbsum=25
+tc rnd-small-8 gen_random maxw=8 maxbsum=25
+tc rnd-small-9 gen_random maxw=8 maxbsum=25
+tc rnd-small-10 gen_random maxw=8 maxbsum=25
+tc rnd-small-11 gen_random maxw=8 maxbsum=25
+tc rnd-small-12 gen_random maxw=8 maxbsum=25
 
 group group2 34
 limits maxw=20 maxbsum=60
