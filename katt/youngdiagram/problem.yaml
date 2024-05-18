@@ -1,0 +1,9 @@
+source: Programmeringsolympiadens KATT 2012
+author: Programmeringsolympiaden
+rights_owner: COCI
+validation: custom
+license: educational
+
+type: scoring
+grading:
+    show_test_data_groups: yes
