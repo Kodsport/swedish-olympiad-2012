@@ -1,0 +1,31 @@
+\problemname{Lighthouses}
+\noindent
+
+We have a square grid consisting of $n \times n$ cells. There are $m$ lighthouses placed on the grid.
+Initially, all lighthouses are "off," but when you turn one on, all other lighthouses sharing the same
+$x$ or $y$ coordinate with the already lit lighthouse will also turn on, and this continues recursively.
+You can turn on $k$ lighthouses, and because you hate darkness, your goal is to light as many lighthouses
+as possible by the end. How many lighthouses can you get to light up?
+
+\section*{Input}
+The first line of input contains the integers $n$, $m$ and $k$ ($1 \leq n \leq 3 \cdot 10^5$, $1 \leq m \leq 5 \cdot 10^5$, $1 \leq k \leq m$).
+
+The following $m$ lines each contain the integer coordinates $(x_i, y_i)$ for each lighthouse, satisfying $0 \le x_i, y_i < n$.
+There is at most one lighthouse per cell. You may not assume that the lighthouses are uniformly distributed.
+
+\section*{Output}
+Print an integer: the maximum number of lighthouses you can light up if you turn on at most $k$ of them.
+
+
+\section*{Points}
+Your solution will be tested on several test case groups.
+To get the points for a group, it must pass all the test cases in the group.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
+  $1$    & $10$      & $m \leq 2000$. \\ \hline
+  $2$    & $30$      & $m \leq 30000$. \\ \hline
+  $3$    & $60$      & No additional constraints. \\ \hline
+\end{tabular}

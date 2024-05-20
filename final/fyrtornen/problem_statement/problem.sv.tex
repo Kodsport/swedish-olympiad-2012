@@ -1,0 +1,30 @@
+\problemname{Fyrtornen}
+
+Vi har ett kvadratiskt rutnät på $n \times n$ rutor. Det finns $m$ stycken fyrtorn utplacerade.
+Till en början är alla "släckta", men när du tänder ett av dem så tänds samtliga andra fyrtorn
+som har en $x$- eller $y$-koordinat gemensam med det redan tända tornet, och detta forsätter
+sedan rekursivt. Antag nu att du själv får tända $k$ torn, och att du ska tända tornen så att så
+många som möjligt lyser på slutet. Hur många torn kan du få att lysa?
+
+\section*{Indata}
+Den första raden av indata innehåler heltalen $n$, $m$ och $k$ ($1 \leq n \leq 3 \cdot 10^5$, $1 \leq m \leq 5 \cdot 10^5$, $1 \leq k \leq m$).
+
+De följande $m$ radera innehåller vardera heltalskoordinaterna $(x_i, y_i)$ för varje fyrtorn, som uppfyller $0 \le x_i, y_i < n$.
+Det står som mest ett torn på varje ruta. Du kan inte förutsätta att fyrtornen står jämnt utspridda.
+
+\section*{Utdata}
+Skriv ut ett heltal: det största antalet fyrtorn du kan lysa upp om du sätter på som mest $k$ stycken.
+
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | l |}
+  \hline
+  Grupp & Poängvärde & Gränser \\ \hline \hline
+  $1$   & $10$        & $m \leq 2000$ \\ \hline
+  $2$   & $30$        & $m \leq 30000$ \\ \hline
+  $3$   & $60$        & Inga ytterligare begränsningar. \\ \hline
+\end{tabular}
