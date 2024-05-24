@@ -6,10 +6,10 @@ Fotbollsplanen som de spelar på är inte symmetrisk, utan målen är olika stor
 
 Spelarna kom på att man kan kompensera orättvisan med planhalvorna genom att växelvis byta planhalva. Man bestämde att efter att något lag gjort $5$ mål byter man planhalva, sedan byter man tillbaka vid $10$, återigen vid $15$, $20$, $25$ o.s.v.. Lag 1 börjar alltid spela på planhalva 1. Notera att man alltså granskar maxvärdet av lagens mål, inte summan! T.ex. byter man inte då det blir ($3$-$2$), utan vid t.ex. ($5$-$2$). Inte heller vid ($5$-$5$), utan först vid t.ex. ($7$-$10$).
 
-\section*{Input}
+\section*{Indata}
 Indatan består av en enda rad med tre stycken tal. Det första är heltalet $n$, $1 \leq n \leq 100$, antalet mål ett lag måste göra innan det vinner. Därefter kommer flyttalet $P_1$, sannolikheten att lag 1 gör nästa mål när de har planhalva 1, samt slutligen flyttalet $P_2$, sannolikheten att lag 1 gör nästa mål när de har planhalva 2. Självklart gäller att $0 \leq P_1, P_2 \leq 1$. Observera att sannolikheten att lag 2 gör nästa mål lätt kan beräknas: den är $1 - P_1$ eller $1 - P_2$, beroende på om lag 1 spelar på planhalva 1 eller 2.
 
-\section*{Output}
+\section*{Utdata}
 Programmet ska skriva ut sannolikheten att lag 1 vinner matchen. Det skall vara korrekt med minst $6$ decimaler.
 
 \noindent
