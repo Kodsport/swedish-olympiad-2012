@@ -2,6 +2,7 @@
 #include <tuple>
 #include <cstring>
 #include <cmath>
+#include <array>
 #include "validate.h"
 
 using namespace std;
