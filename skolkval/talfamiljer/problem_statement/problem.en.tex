@@ -1,0 +1,21 @@
+\problemname{Number Families}
+The following problem is a generalization of a problem from the qualifier for the Swedish School Mathematics Competition in autumn 2011. We say that every positive integer $N$ has a family consisting of $N$ and all positive integers you can get by rearranging $N$'s digits, except those that upon rearrangement get a zero as the first digit. (For example, the number $101$ has the family $101$, $110$.) We also say that $N$'s family likes the positive integer $p$ if $N$ or some other number in the family is divisible by $p$. (All numbers that the above family likes are $1,2,5,10,11,22,55,101,110$.)
+
+Write a program that, given $N$ positive integers, determines the smallest positive integer whose family likes all of the given numbers. In the given test cases, there will always be such a number with at most six digits.
+\section*{Input}
+The first line contains the integer $N$ ($1\leq N \leq 10$). Then follows a line with $N$ positive integers, all less than one million.
+
+\section*{Output}
+Output the smallest integer whose family likes all of the given numbers.
+
+\section*{Scoring}
+Your solution will be tested on a set of test groups.
+To earn points for a group, you must pass all test cases in that group.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Group} & \textbf{Points} & \textbf{Constraints} \\ \hline
+  $1$    & $40$          & The answer is less than 100.  \\ \hline
+  $2$    & $60$          & No additional constraints.  \\ \hline
+\end{tabular}
