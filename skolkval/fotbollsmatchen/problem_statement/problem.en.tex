@@ -1,0 +1,27 @@
+\problemname{The Football Match}
+
+Two teams are going to play a football match, and we shall compute the probability that team 1 wins over team 2.
+
+The football field they play on is not symmetric; the goals are of different sizes, so which half of the field a team has can be decisive for the result. At the same time, the two teams are of course not necessarily of equal strength either. The teams play until one of the teams has scored $n$ goals, and then that team has won. You are given as input the probability that team 1 scores the next goal. This probability depends only on which half of the field the team is playing on.
+
+The players figured out that one can compensate for the unfairness of the field halves by alternately switching sides. They decided that after some team has scored $5$ goals they switch sides, then switch back at $10$, again at $15$, $20$, $25$, and so on. Team 1 always starts playing on field half 1. Note that one examines the maximum of the teams' scores, not the sum! For example, there is no switch at ($3$-$2$), but there is at e.g. ($5$-$2$). Not at ($5$-$5$) either, but at e.g. ($7$-$10$).
+
+\section*{Input}
+The input consists of a single line with three values. The first is the integer $n$, $1 \leq n \leq 100$, the number of goals a team must score to win. Then comes the floating-point number $P_1$, the probability that team 1 scores the next goal when they have field half 1, and finally the floating-point number $P_2$, the probability that team 1 scores the next goal when they have field half 2. Of course $0 \leq P_1, P_2 \leq 1$. Note that the probability that team 2 scores the next goal is easily computed: it is $1 - P_1$ or $1 - P_2$, depending on whether team 1 is playing on field half 1 or 2.
+
+\section*{Output}
+The program should output the probability that team 1 wins the match. It should be correct to at least $6$ decimal places.
+
+\section*{Scoring}
+Your solution will be tested on a set of test groups.
+To earn points for a group, you must pass all test cases in that group.
+
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Group} & \textbf{Points} & \textbf{Constraints} \\ \hline
+  $1$    & $20$          & $n \leq 4$  \\ \hline
+  $2$    & $20$          & $n \leq 9$  \\ \hline
+  $3$    & $60$          & No additional constraints.  \\ \hline
+\end{tabular}
