@@ -1,97 +1,84 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long ll;
-#define int ll
-const int inf = int(1e18);
+using ll = long long;
+using vi = vector<ll>;
+using vvi = vector<vi>;
+using p2 = pair<ll, ll>;
+const ll inf = 1e18;
 
-typedef vector<int> vi;
-typedef vector<vi> vvi;
-typedef pair<int, int> p2;
-
-#define rep(i, high) for (int i = 0; i < high; i++)
-#define repp(i, low, high) for (int i = low; i < high; i++)
-#define repe(i, container) for (auto& i : container)
-#define sz(container) ((int)container.size())
+#define rep(i,n) for (ll i = 0; i < (n); i++)
+#define repp(i,a,n) for (ll i = (a); i < (n); i++)
+#define repe(i, arr) for (auto& i : arr)
 #define all(x) begin(x),end(x)
-#define ceildiv(x,y) ((x + y - 1) / (y))
-
-inline void fast() { ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL); }
-
-auto Start = chrono::high_resolution_clock::now();
-void resettimer() { Start = chrono::high_resolution_clock::now(); }
-int elapsedmillis() { return chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now() - Start).count(); }
-
-#if _LOCAL
-#define assert(x) if (!(x)) __debugbreak()
-#endif
+#define sz(x) ((ll)(x).size())
 
 struct UF {
-	vi e;
-	UF(int n) : e(n, -1) {}
-	bool sameSet(int a, int b) { return find(a) == find(b); }
-	int size(int x) { return -e[find(x)]; }
-	int find(int x) { return e[x] < 0 ? x : e[x] = find(e[x]); }
-	bool join(int a, int b) {
-		a = find(a), b = find(b);
-		if (a == b) return false;
-		if (e[a] > e[b]) swap(a, b);
-		e[a] += e[b]; e[b] = a;
-		return true;
-	}
+    vi e;
+    UF(ll n) : e(n, -1) {}
+    bool sameSet(ll a, ll b) { return find(a) == find(b); }
+    ll size(ll x) { return -e[find(x)]; }
+    ll find(ll x) { return e[x] < 0 ? x : e[x] = find(e[x]); }
+    bool join(ll a, ll b) {
+        a = find(a), b = find(b);
+        if (a == b) return false;
+        if (e[a] > e[b]) swap(a, b);
+        e[a] += e[b]; e[b] = a;
+        return true;
+    }
 };
 
-const int maxcoord = int(3e5) + 10;
+const ll maxcoord = ll(3e5) + 10;
 
-signed main()
+int main()
 {
-    fast();
+    cin.tie(0)->sync_with_stdio(0);
 
-	int n, m, k;
-	cin >> n >> m >> k;
+    ll n, m, k;
+    cin >> n >> m >> k;
 
-	vvi x(maxcoord);
-	vvi y(maxcoord);
+    vvi x(maxcoord);
+    vvi y(maxcoord);
 
-	rep(i, m)
-	{
-		int a, b;
-		cin >> a >> b;
-		x[a].push_back(i);
-		y[b].push_back(i);
-	}
+    rep(i, m)
+    {
+        ll a, b;
+        cin >> a >> b;
+        x[a].push_back(i);
+        y[b].push_back(i);
+    }
 
-	UF uf(m);
-	auto join = [&](vvi& axis)
-	{
-		rep(i, maxcoord)
-		{
-			repp(j, 1, sz(axis[i]))
-			{
-				uf.join(axis[i][0], axis[i][j]);
-			}
-		}
-	};
-	join(x);
-	join(y);
+    UF uf(m);
+    auto join = [&](vvi& axis)
+    {
+        rep(i, maxcoord)
+        {
+            repp(j, 1, sz(axis[i]))
+            {
+                uf.join(axis[i][0], axis[i][j]);
+            }
+        }
+    };
+    join(x);
+    join(y);
 
-	vi compsizes;
-	vi vis(m);
-	rep(i, m)
-	{
-		int u = uf.find(i);
-		if (vis[u]) continue;
-		vis[u] = 1;
-		compsizes.push_back(uf.size(u));
-	}
-	sort(all(compsizes));
-	reverse(all(compsizes));
-	int ans = 0;
-	rep(i, min(k, sz(compsizes)))
-	{
-		ans += compsizes[i];
-	}
-	cout << ans;
+    vi compsizes;
+    vi vis(m);
+    rep(i, m)
+    {
+        ll u = uf.find(i);
+        if (vis[u]) continue;
+        vis[u] = 1;
+        compsizes.push_back(uf.size(u));
+    }
+    sort(all(compsizes));
+    reverse(all(compsizes));
+    ll ans = 0;
+    rep(i, min(k, sz(compsizes)))
+    {
+        ans += compsizes[i];
+    }
+    cout << ans;
 
     return 0;
 }
