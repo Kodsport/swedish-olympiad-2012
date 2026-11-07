@@ -1,56 +1,17 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <sstream>
-#include <algorithm>
-#include <cmath>
-#include <set>
-#include <unordered_set>
-#include <string>
-#include <iterator>
-#include <queue>
-#include <tuple>
-#include <numeric>
-#include <random>
-#include <time.h>
-#include <stack>
-#include <chrono>
-#include <unordered_map>
-#include <iomanip>
-
+#include <bits/stdc++.h>
 using namespace std;
 
-#define ll long long
-#define vi vector<ll>
-#define vvi vector<vi>
-#define p2 pair<ll, ll>
-#define p3 vi
-#define p4 vi
-#define inf 2e9
-#define linf 1e17
+using ll = long long;
+using vi = vector<ll>;
+using vvi = vector<vi>;
+using p2 = pair<ll, ll>;
+const ll inf = 1e18;
 
-#define read(a) cin >> a
-#define write(a) cout << (a) << endl
-#define deb __debugbreak();
-
-#define readpush(type,a) type temp; read(temp); a.push_back(temp)
-#define readinsert(type,a) type temp; read(temp); a.insert(temp)
-#define setcontains(set, x) (set.find(x) != set.end())
-#define all(a) begin(a),end(a)
-
-#define rep(i, high) for (ll i = 0; i < high; i++)
-#define repe(i, container) for (auto& i : container)
-#define per(i, high) for (ll i = high; i >= 0; i--)
-
-#define ceildiv(x,y) ((x + y - 1) / y)
-
-
-inline void fast()
-{
-    ios::sync_with_stdio(false);
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL); cout.tie(NULL);
-}
+#define rep(i,n) for (ll i = 0; i < (n); i++)
+#define repp(i,a,n) for (ll i = (a); i < (n); i++)
+#define repe(i, arr) for (auto& i : arr)
+#define all(x) begin(x),end(x)
+#define sz(x) ((ll)(x).size())
 
 class DisjointSet
 {
@@ -112,26 +73,21 @@ void dfs(map<int,set<int>>& neighbours, vector<int>& seen, int c, int color)
     }
 }
 
-int main()
-{
-    fast();
+int main() {
+    cin.tie(0)->sync_with_stdio(0);
 
-    int n;
-    int m;
-    int k;
-    read(n);
-    read(m);
-    read(k);
+    int n,m,k;
+    cin >> n >> m >> k;
+    using p3 = array<int,3>;
 
     vector<p3> towers;
 
     rep(i, m)
     {
-        int x;
-        int y;
-        read(x);
-        read(y);
-        towers.push_back({ x,y,i });
+        int x,y;
+        cin >> x >> y;
+        p3 p = {x,y,i};
+        towers.push_back(p);
     }
 
 
@@ -192,7 +148,7 @@ int main()
     repe(p, groups)
     {
         int parent = p;
-        if (!setcontains(unions, parent))
+        if (!unions.contains(parent))
         {
             unions[parent] = 0;
         }
@@ -213,7 +169,7 @@ int main()
         ans -= unionSizes[i];
     }
 
-    write(ans);
+    cout << ans << '\n';
 
     return 0;
 }

@@ -78,7 +78,7 @@ int main()
     {
         ans += compsizes[i];
     }
-    cout << ans;
+    cout << ans << '\n';
 
     return 0;
 }

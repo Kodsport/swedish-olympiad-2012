@@ -1,15 +1,17 @@
 \problemname{Fyrtornen}
 
+\illustration{0.3}{sample1.pdf}{Exempelfall $1$: tänder man de två tornen med strålar tänds även tornen som pilarna pekar på, så $4$ torn lyser.}
+
 Vi har ett kvadratiskt rutnät på $n \times n$ rutor. Det finns $m$ stycken fyrtorn utplacerade.
-Till en början är alla ``släckta'', men när du tänder ett av dem så tänds samtliga andra fyrtorn
-som har en $x$- eller $y$-koordinat gemensam med det redan tända tornet, och detta forsätter
+Till en början är alla ''släckta'', men när du tänder ett av dem så tänds samtliga andra fyrtorn
+som har en $x$- eller $y$-koordinat gemensam med det redan tända tornet, och detta fortsätter
 sedan rekursivt. Antag nu att du själv får tända $k$ torn, och att du ska tända tornen så att så
 många som möjligt lyser på slutet. Hur många torn kan du få att lysa?
 
 \section*{Indata}
-Den första raden av indata innehåler heltalen $n$, $m$ och $k$ ($1 \leq n \leq 3 \cdot 10^5$, $1 \leq m \leq 5 \cdot 10^5$, $1 \leq k \leq m$).
+Den första raden av indata innehåller heltalen $n$, $m$ och $k$ ($1 \leq n \leq 3 \cdot 10^5$, $1 \leq m \leq 5 \cdot 10^5$, $1 \leq k \leq m$).
 
-De följande $m$ radera innehåller vardera heltalskoordinaterna $(x_i, y_i)$ för varje fyrtorn, som uppfyller $0 \le x_i, y_i < n$.
+De följande $m$ raderna innehåller vardera heltalskoordinaterna $(x_i, y_i)$ för varje fyrtorn, som uppfyller $0 \le x_i, y_i < n$.
 Det står som mest ett torn på varje ruta. Du kan inte förutsätta att fyrtornen står jämnt utspridda.
 
 \section*{Utdata}
@@ -25,7 +27,7 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
   \hline
   \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
   $1$   & $10$        & $m \leq 2000$ \\ \hline
-  $2$   & $30$        & $m \leq 30000$ \\ \hline
+  $2$   & $30$        & $m \leq 30\,000$ \\ \hline
   $3$   & $60$        & Inga ytterligare begränsningar. \\ \hline
 \end{tabular}
 
