@@ -5,19 +5,26 @@
 % Sample 1: n = 4, k = 2. Turning on (0,0) and (2,2) lights 4 lighthouses:
 % (0,0) spreads to (0,1) (same x), which spreads to (1,1) (same y).
 \begin{document}
+% The HTML statement renders this PDF with a transparent background and Kattis
+% does not invert illustrations in dark mode, so every colour is a mid-tone that
+% reads on both a white and a dark (#333) background.
+\definecolor{ink}{HTML}{8C8C8C}
+\definecolor{beam}{HTML}{E08A00}
+\definecolor{lamp}{HTML}{FFB81C}
+\definecolor{offlamp}{HTML}{7A7A7A}
 \begin{tikzpicture}[
-    lit/.style={circle, draw=orange!70!black, fill=orange!50!yellow, minimum size=4mm, inner sep=0pt},
-    off/.style={circle, draw=gray!70, fill=gray!25, minimum size=4mm, inner sep=0pt},
-    halo/.style={circle, fill=yellow!35, minimum size=8.5mm, inner sep=0pt},
-    spread/.style={-{Stealth[length=2mm]}, orange!70!black, thick, shorten <=2.4mm, shorten >=2.4mm},
+    lit/.style={circle, draw=beam, fill=lamp, minimum size=4mm, inner sep=0pt},
+    off/.style={circle, draw=ink, fill=offlamp, minimum size=4mm, inner sep=0pt},
+    halo/.style={circle, fill=lamp, fill opacity=0.3, minimum size=8.5mm, inner sep=0pt},
+    spread/.style={-{Stealth[length=2mm]}, beam, thick, shorten <=2.4mm, shorten >=2.4mm},
   ]
-  \draw[gray!45] (0,0) grid (4,4);
+  \draw[ink, opacity=0.6] (0,0) grid (4,4);
   \foreach \i in {0,...,3} {
-    \node[below, gray!70!black] at (\i+0.5,0) {\small $\i$};
-    \node[left, gray!70!black]  at (0,\i+0.5) {\small $\i$};
+    \node[below, ink] at (\i+0.5,0) {\small $\i$};
+    \node[left, ink]  at (0,\i+0.5) {\small $\i$};
   }
-  \node at (4.35,-0.3) {$x$};
-  \node at (-0.3,4.35) {$y$};
+  \node[ink] at (4.35,-0.3) {$x$};
+  \node[ink] at (-0.3,4.35) {$y$};
 
   \foreach \p in {(0.5,0.5),(0.5,1.5),(1.5,1.5),(2.5,2.5)} \node[halo] at \p {};
   \draw[spread] (0.5,0.5) -- (0.5,1.5);
@@ -25,7 +32,7 @@
   % rays mark the two lighthouses that are turned on
   \foreach \c in {(0.5,0.5),(2.5,2.5)}
     \foreach \a in {0,45,...,315}
-      \draw[orange!70!black, semithick, shift={\c}] (\a:2.7mm) -- (\a:3.7mm);
+      \draw[beam, semithick, shift={\c}] (\a:2.7mm) -- (\a:3.7mm);
   \foreach \p in {(0.5,0.5),(0.5,1.5),(1.5,1.5),(2.5,2.5)} \node[lit] at \p {};
   \node[off] at (3.5,3.5) {};
 \end{tikzpicture}
